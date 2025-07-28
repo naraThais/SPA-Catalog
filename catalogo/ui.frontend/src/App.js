@@ -8,8 +8,6 @@ class App extends Page {
       <div>
         {this.childComponents}
         {this.childPages}
-
-        <p>OIIIIIIIIIII TESTE</p>
       </div>
     );
   }

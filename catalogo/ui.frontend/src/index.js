@@ -11,6 +11,7 @@ import App from './App';
 import LocalDevModelClient from './LocalDevModelClient';
 import './components/import-components';
 import './index.css';
+import "./Styles/globals.css";
 
 const modelManagerOptions = {};
 if(process.env.REACT_APP_PROXY_ENABLED) {

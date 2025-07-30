@@ -1,77 +1,84 @@
-/* =============================
-   RESET MINIMAL — mantemos o da Adobe
-   ============================= */
-
-/*
-   Tudo a seguir entra depois da folha global do archetype,
-   então sobrescreve por cascata (ou com !important onde preciso).
-   ------------------------------------------------------------- */
-
-/* Paleta do projeto */
 :root {
-  --cafe-escuro: #2c1b18;   /* espresso */
-  --cafe-medio : #4b2e2a;   /* torra média (footer) */
-  --crema      : #f8f5f2;   /* fundo bege claro */
+  --gatinho-claro: #f3e7da;
+  --gatinho-pessego: #dfb9a9;
+  --gatinho-marrom: #6f4e37;
+  --gatinho-creme: #fefaf7;
+  --gatinho-sombra: rgba(0, 0, 0, 0.05);
 }
 
-/* ----- corpo geral ----- */
+/* Corpo */
 body {
-  background-color: var(--crema) !important;
-  color: var(--cafe-escuro) !important;
+  background-color: var(--gatinho-claro) !important;
+  color: var(--gatinho-marrom) !important;
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  line-height: 1.55;
+  line-height: 1.6 !important;
+  font-size: 1rem !important;
+  -webkit-font-smoothing: antialiased !important;
+  text-rendering: optimizeLegibility !important;
 }
 
-/* Remove largura fixa e padding do componente Core Page */
+/* Layout base */
 .page {
   max-width: none !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* ----- títulos ----- */
+/* Títulos */
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap");
 
 h1, h2, h3, h4, h5 {
-  color: var(--cafe-escuro) !important;
-  margin: 0 0 0.5em;
+  color: var(--gatinho-marrom) !important;
+  margin: 0 0 0.6em;
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
 }
 
-h1 { font-size: 2.25rem; }   /* ajuste fino opcional */
-h2 { font-size: 1.75rem; }
-h3 { font-size: 1.4rem;  }
+h1 { font-size: 2.5rem !important; }
+h2 { font-size: 2rem !important; }
+h3 { font-size: 1.6rem !important; }
+h4 { font-size: 1.3rem !important; }
+h5 { font-size: 1.1rem !important; }
 
-/* ----- parágrafos e listas ----- */
+/* Parágrafos e listas */
 p, li {
-  font-size: 1rem;
-  margin: 0 0 1rem;
+  font-size: 1.05rem !important;
+  margin: 0 0 1.2rem !important;
 }
 
-/* ----- links ----- */
+/* Links */
 a {
-  color: var(--cafe-medio);
-  text-decoration: none;
-  transition: color .2s ease;
+  color: var(--gatinho-pessego) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  transition: color 0.2s ease, text-decoration 0.2s ease !important;
 }
 a:hover,
 a:focus {
-  color: var(--cafe-escuro);
-  text-decoration: underline;
+  color: var(--gatinho-marrom) !important;
+  text-decoration: underline !important;
 }
 
+/* Containers comuns */
 .nav-container,
 .rw-box {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  color: var(--cafe-escuro) !important;
+  color: var(--gatinho-marrom) !important;
 }
 
-/* (exemplo) botão genérico se usar Core Button sem customização */
+/* Botão padrão */
 .cmp-button {
-  background: var(--cafe-medio);
-  color: var(--crema);
-  padding: .6rem 1.2rem;
-  border-radius: 4px;
+  background: var(--gatinho-pessego) !important;
+  color: var(--gatinho-creme) !important;
+  padding: 0.6rem 1.2rem !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+  transition: background 0.3s ease !important;
+  box-shadow: 0 2px 5px var(--gatinho-sombra) !important;
 }
 .cmp-button:hover {
-  background: var(--cafe-escuro);
+  background: var(--gatinho-marrom) !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
 }

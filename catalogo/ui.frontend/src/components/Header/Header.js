@@ -12,7 +12,7 @@ const menu = [
 
 const Header = () => {
   const [menuAberto, setMenuAberto] = useState(false);
-  const { pathname } = useLocation(); // para destacar item ativo
+  const { pathname } = useLocation(); 
 
   return (
     <header className="site-header">

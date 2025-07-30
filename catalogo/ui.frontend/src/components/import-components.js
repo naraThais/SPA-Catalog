@@ -18,6 +18,11 @@ import withAsyncImport from "../utils/withAsyncImport";
 import './Page/Page';
 import './Container/Container';
 import './ExperienceFragment/ExperienceFragment';
+import "./Hero/Hero";
+import './Navigation/Navigation';
+import header from './Header/Header';
+import footer from "./Footer/Footer";
+
 
 import {MapTo} from '@adobe/aem-react-editable-components';
 
@@ -47,10 +52,7 @@ import {
     ListV2,ListV2IsEmptyFn
 } from '@adobe/aem-core-components-react-base';
 
-import "./Hero/Hero";
-import './Navigation/Navigation';
-import './Container/Container';
-import './Header/Header';
+
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
 
@@ -80,6 +82,21 @@ MapTo('catalogo/components/carousel')(CarouselV1, {isEmpty: CarouselV1IsEmptyFn}
 MapTo('catalogo/components/container')(ContainerV1, {isEmpty: ContainerV1IsEmptyFn});
 
 
+MapTo('catalogo/components/header')(header, {
+    emptyLabel: 'Header',
+    isEmpty: function () {
+        return false;
+    }
+});
+
+MapTo('catalogo/components/footer')(footer, {
+    emptyLabel: 'Footer',
+    isEmpty: function () {
+        return false;
+    }
+});
+
+
 //lazy load of internal component (hello world)
 
 /**
@@ -96,3 +113,4 @@ const TextEditConfig = {
 };
 
 MapTo('catalogo/components/text')(LazyTextComponent, TextEditConfig);
+

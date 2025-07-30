@@ -25,10 +25,10 @@ body {
 }
 
 /* Títulos */
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 h1, h2, h3, h4, h5 {
-  color: var(--gatinho-marrom) !important;
+  color: #ecc85c !important;
   margin: 0 0 0.6em;
   font-family: 'Playfair Display', serif !important;
   font-weight: 600 !important;
@@ -47,18 +47,7 @@ p, li {
   margin: 0 0 1.2rem !important;
 }
 
-/* Links */
-a {
-  color: var(--gatinho-pessego) !important;
-  text-decoration: none !important;
-  font-weight: 500 !important;
-  transition: color 0.2s ease, text-decoration 0.2s ease !important;
-}
-a:hover,
-a:focus {
-  color: var(--gatinho-marrom) !important;
-  text-decoration: underline !important;
-}
+
 
 /* Containers comuns */
 .nav-container,

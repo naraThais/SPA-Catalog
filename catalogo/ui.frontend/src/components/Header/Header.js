@@ -3,34 +3,43 @@ import { Link, useLocation } from "react-router-dom";
 import { MapTo } from "@adobe/aem-react-editable-components";
 import "./Header.css";
 
+// Menu principal do site PetCare
 const menu = [
-  { label: "Inicio",   path: "/content/catalog/us/en/home.html" },
-  { label: "Pets",  path: "/content/cafecatalog/us/en/pets.html" },
-  { label: "Sobre",  path: "/content/cafecatalog/us/en/about.html" },
+  { label: "Início", path: "/content/catalogo/us/en/home.html" },
+  { label: "Pets", path: "/content/catalogo/us/en/pets.html" },
+  { label: "Sobre", path: "/content/cafecatalog/us/en/about.html" },
 ];
 
 const Header = () => {
-  const [open, setOpen]   = useState(false);
-  const { pathname }      = useLocation();     // para marcar item ativo
+  const [menuAberto, setMenuAberto] = useState(false);
+  const { pathname } = useLocation(); // para destacar item ativo
 
   return (
     <header className="site-header">
-      {/* marca / logo */}
+      {/* Logo / Marca */}
       <div className="brand">
-        <Link to="/content/catalogo/us/en.html">PetCare</Link>
-        <button className="burger" onClick={() => setOpen(!open)} aria-label="Menu">
+        <Link to="/content/catalogo/us/en.html">
+          <strong>PetCare</strong>
+        </Link>
+
+        {/* Botão de menu responsivo */}
+        <button
+          className="pet"
+          onClick={() => setMenuAberto(!menuAberto)}
+          aria-label="Abrir menu"
+        >
           ☰
         </button>
       </div>
 
-      {/* navegação */}
-      <ul className={`primary-nav ${open ? "open" : ""}`}>
+      {/* Navegação principal */}
+      <ul className={`primary-nav ${menuAberto ? "open" : ""}`}>
         {menu.map(({ label, path }) => (
           <li key={path}>
             <Link
               to={path}
               className={pathname === path ? "active" : ""}
-              onClick={() => setOpen(false)}        
+              onClick={() => setMenuAberto(false)}
             >
               {label}
             </Link>

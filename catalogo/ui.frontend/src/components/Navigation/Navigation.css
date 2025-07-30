@@ -1,6 +1,6 @@
 nav {
    position: relative;
-   background: #0d0e0b;
+   background: #eef3e4;
    font-size: 16px;
  }
 
@@ -15,13 +15,14 @@ nav {
 
  nav a {
    display: block;
-   color: #fff;
+   color: #000000;
    text-decoration: none;
    text-transform: uppercase;
+
  }
 
  nav ul li {
-   color: #fff;
+   color: #b74d4d;
    list-style: none;
    transition: 0.5s;
    margin-right: 20px;
@@ -41,20 +42,19 @@ nav {
    content: "";
    margin-left: 100px;
    margin-top: 8px;
-   color: red;
+   color: #779ea9;
+   text-decoration: none;
  }
 
 nav ul.menu-area > li > a {
-    color: black;
+    color: rgb(255, 255, 255);
     font-family: inherit;
     font-weight: bold;
     float: left;
     margin: 20px 20px 10px;;
 }
 
- nav > ul > li:hover {
-   background: #668fc6;
- }
+
 
  nav ul.menu-area {
    padding: 40px 40px 0 40px;

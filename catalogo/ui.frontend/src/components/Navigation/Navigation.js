@@ -1,19 +1,12 @@
 import { MapTo } from "@adobe/aem-react-editable-components";
 import React, { Component, useState } from "react";
-import extractModelId from "../../utils/extract-model-id";
 import { Link } from "react-router-dom";
 
 require("./Navigation.css");
 
-// This will help us to include TitleText component specific CSS
 
 const NavigationEditConfig = {
   emptyLabel: "Navigaton (Custom)",
-
-  /**
-   * emptyLabel will be a component placeholder if nothing is
-   * authored or below values are false.
-   */
   isEmpty: function (props) {
     return !props;
   },

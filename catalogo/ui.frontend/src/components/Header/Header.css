@@ -1,32 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
 
+:root {
+  --gatinho-claro: #f3e7da;
+  --gatinho-pessego: #dfb9a9;
+  --gatinho-marrom: #6f4e37;
+  --gatinho-azul: #225c62;
+  --gatinho-creme: #fefaf7;
+  --gatinho-sombra: rgba(0, 0, 0, 0.05);
+}
 
 .site-header {
-  background: #4b2e2a;          
-  color:     #f5f0eb !important;          
+  background: var(--gatinho-azul);
+  color: var(-gatinho-creme);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 1rem;
+  padding: 0.85rem 1.25rem;
   position: relative;
+  box-shadow: 0 2px 5px var(--gatinho-sombra);
+  z-index: 1000;
 }
-
 
 .brand a {
   font-family: "Playfair Display", serif;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   text-decoration: none;
-  color: inherit;
+  color: var(--gatinho-creme);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-
-.burger {
+.pet {
   display: none;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   background: none;
   border: none;
-  color: inherit;
+  color: var(--gatinho-creme);
   cursor: pointer;
+  margin-left: 1rem;
 }
 
 .primary-nav {
@@ -34,34 +45,53 @@
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .primary-nav a {
-  color: inherit;
+  color: var(--gatinho-creme);
   text-decoration: none;
-  font-size: 0.95rem;
-  transition: color .2s;
+  font-size: 1rem;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 2px;
 }
 
 .primary-nav a:hover,
 .primary-nav a.active {
-  color: #d5c1b5;              
+  color: var(--gatinho-pessego);
+  border-bottom: 2px solid var(--gatinho-pessego);
 }
 
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
 
-@media (max-width: 640px) {
-  .burger { display: block; }
   .primary-nav {
     position: absolute;
-    top: 56px;
+    top: 100%;
     left: 0;
     right: 0;
     flex-direction: column;
-    background: #4b2e2a;
+    background: var(--gatinho-creme);
     gap: 1rem;
-    padding: 1rem;
+    padding: 1.2rem 1rem;
     display: none;
+    animation: slideDown 0.3s ease forwards;
   }
-  .primary-nav.open { display: flex; }
+
+  .primary-nav.open {
+    display: flex;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

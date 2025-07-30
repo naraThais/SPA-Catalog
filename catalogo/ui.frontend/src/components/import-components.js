@@ -46,7 +46,11 @@ import {
     SeparatorV1,SeparatorV1IsEmptyFn,
     ListV2,ListV2IsEmptyFn
 } from '@adobe/aem-core-components-react-base';
+
 import "./Hero/Hero";
+import './Navigation/Navigation';
+import './Container/Container';
+import './Header/Header';
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
 

@@ -3,11 +3,10 @@ import { Link, useLocation } from "react-router-dom";
 import { MapTo } from "@adobe/aem-react-editable-components";
 import "./Header.css";
 
-// Menu principal do site PetCare
 const menu = [
-  { label: "Início", path: "/content/catalogo/us/en/home.html" },
+  { label: "Início", path: "/content/catalogo/us/en/home.html?wcmmode=disabled" },
   { label: "Pets", path: "/content/catalogo/us/en/pets.html" },
-  { label: "Sobre", path: "/content/cafecatalog/us/en/about.html" },
+  { label: "Sobre", path: "/content/catalogo/us/en/about.html" },
 ];
 
 const Header = () => {
@@ -16,13 +15,11 @@ const Header = () => {
 
   return (
     <header className="site-header">
-      {/* Logo / Marca */}
       <div className="brand">
-        <Link to="/content/catalogo/us/en.html">
+        <Link to="/content/catalogo/us/en/home.html?wcmmode=disabled">
           <strong>PetCare</strong>
         </Link>
 
-        {/* Botão de menu responsivo */}
         <button
           className="pet"
           onClick={() => setMenuAberto(!menuAberto)}

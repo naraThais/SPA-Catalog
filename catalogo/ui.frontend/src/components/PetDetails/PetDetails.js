@@ -1,38 +1,46 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import './PetDetails.css';
+import React, { useEffect, useState } from "react";
+import "./PetDetails.css";
+import { MapTo } from "@adobe/aem-spa-component-mapping";
 
-const PetDetails = () => {
-  const { id } = useParams();
-  const [pet, setPet] = useState(null);
-  const [loading, setLoading] = useState(true);
+function PetDetails() {
+  const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch('/content/catalogo/en/us/adocao.model.json')
-      .then((res) => res.json())
-      .then((data) => {
-        const cards = data[':items'].root[':items'];
-        const pets = Object.values(cards).filter(
-          (item) => item['sling:resourceType'] === 'catalogo/components/petcard'
-        );
-        const found = pets.find((p) => p.id === id);
-        setPet(found);
-        setLoading(false);
-      });
-  }, [id]);
+    const stored = sessionStorage.getItem("petDetail");
+    if (stored) {
+      setData(JSON.parse(stored));
+    }
+  }, []);
 
-  if (loading) return <p>Carregando...</p>;
-  if (!pet) return <p>Pet não encontrado.</p>;
+  if (!data) {
+    return <p style={{padding:"2rem"}}>Nenhum Pet selecionado.</p>;
+  }
+
+  const {
+    name, bread, age, description, image
+  } = data;
 
   return (
-    <div className="pet-details">
-      <img src={pet.image} alt={pet.name} />
-      <h2>{pet.name}</h2>
-      <p><strong>Raça:</strong> {pet.breed}</p>
-      <p><strong>Idade:</strong> {pet.age}</p>
-      <p><strong>Sobre:</strong> {pet.description}</p>
-    </div>
-  );
-};
+    <main className="coffee-details">
+      {image && (
+        <div
+          className="hero"
+          style={{ backgroundImage: `url(${image})` }}
+        />
+      )}
 
-export default PetDetails;
+      <section className="info">
+        <h1>{name} — {bread}</h1>
+
+        <table>
+          <tbody>
+            <tr><th>Idade</th><td>{age}</td></tr>
+            <tr><th>Descrição</th><td>{description}</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  );
+}
+
+export default MapTo("catalogo/components/petdetails")(PetDetails);

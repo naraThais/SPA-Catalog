@@ -22,7 +22,6 @@ const PetCard = (props) => {
 
       <div className="pet-card__content">
         <h2 className="pet-card__name">{name}</h2>
-        <p className="pet-card__id">ID: {id}</p>
         <div className="pet-card__details">
           <dl>
             <dt>Raça</dt><dd>{bread}</dd>

@@ -1,38 +1,40 @@
-import React from 'react';
-import { MapTo } from '@adobe/aem-react-editable-components';
-import './PetCard.css';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { MapTo } from "@adobe/aem-react-editable-components";
+import "./PetCard.css";
 
-const TARGET_URL = "/content/catalogo/us/en/home/detalhes.html";
+const TARGET_URL = "/content/catalogo/us/en/detalhes.html";
 
 const PetCard = (props) => {
-  const { id, name, breed, description} = props;
-const missingMainField = !name || name.trim().length === 0;
+  const { id, name, bread, age, description, image } = props;
 
-const goToDetails = () => {
+  const goToDetails = () => {
     sessionStorage.setItem("petDetail", JSON.stringify(props));
     window.location.href = TARGET_URL;
   };
-if (missingMainField) {
-    return (
-      <article className="pet-card">
-        <p>⚠ Preencha o card para exibir conteúdo.</p>
-      </article>
-    );
-  }
-return (
+
+  return (
     <article className="pet-card">
-        <span>{name}</span>
-        <span>{id}</span>
-      <div>
-          <dt>Raça</dt>
-          <dd>{breed}</dd>
+      {image ? (
+        <img className="pet-card__image" src={image} alt={`Foto de ${name}`} />
+      ) : (
+        <p style={{ color: "red", textAlign: "center" }}>⚠ Nenhuma imagem encontrada para este pet</p>
+      )}
+
+      <div className="pet-card__content">
+        <h2 className="pet-card__name">{name}</h2>
+        <p className="pet-card__id">ID: {id}</p>
+        <div className="pet-card__details">
+          <dl>
+            <dt>Raça</dt><dd>{bread}</dd>
+            <dt>Idade</dt><dd>{age}</dd>
+            <dt>Descrição</dt><dd>{description}</dd>
+          </dl>
         </div>
-        <div>
-          <dt>Descrição</dt>
-          <dd>{description}</dd>
-        </div>
-       <button className="adopt-button" onClick={goToDetails}>Detalhes</button>
+      </div>
+
+      <button className="pet-card__button" onClick={goToDetails}>
+        Detalhes
+      </button>
     </article>
   );
 };

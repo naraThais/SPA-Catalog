@@ -24,7 +24,7 @@ import './Header/Header';
 import './Footer/Footer';
 import './PetDetails/PetDetails';
 import './PetList/PetList';
-
+import './PetCard/PetCard';
 
 import {MapTo} from '@adobe/aem-react-editable-components';
 
@@ -57,7 +57,6 @@ import {
 
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
-const PetCard = withAsyncImport(() => import(`./PetCard/PetCard`));
 
 //lazyload / code splitting examples of external components
 const TitleV2 = withAsyncImport(() => import(`@adobe/aem-core-components-react-base/dist/authoring/title/v2/TitleV2`));
@@ -104,4 +103,3 @@ const TextEditConfig = {
 
 MapTo('catalogo/components/text')(LazyTextComponent, TextEditConfig);
 
-MapTo('catalogo/components/coffeecard')(PetCard);

@@ -1,25 +1,33 @@
-.coffee-details .hero{
-  height:45vh;
-  background-size:cover;
-  background-position:center;
+.pet-details {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fefaf7;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
-.coffee-details .info{
-  max-width:800px;
-  margin:2rem auto;
-  font-family:Heebo,sans-serif;
-  line-height:1.6;
+
+.pet-details img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
 }
-.coffee-details table{
-  width:100%;
-  border-collapse:collapse;
-  margin:1rem 0;
+
+.pet-details h2 {
+  font-size: 2rem;
+  color: #6f4e37;
+  margin-bottom: 0.5rem;
 }
-.coffee-details th{
-  text-align:left;
-  padding:4px 8px;
-  font-weight:600;
+
+.pet-details p {
+  font-size: 1rem;
+  color: #333;
+  margin: 0.3rem 0;
 }
-.coffee-details td{
-  padding:4px 8px;
-  border-left:1px solid #ddd;
+
+.pet-details strong {
+  color: #dfb9a9;
 }

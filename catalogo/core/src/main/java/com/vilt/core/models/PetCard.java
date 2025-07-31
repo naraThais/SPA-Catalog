@@ -1,25 +1,17 @@
 package com.vilt.core.models;
 
 public interface PetCard {
-    String getCountry();
 
-    String getRefCode();
+    String getId();
 
-    String getLotNumber();
+    String getName();
 
-    String getTitle();
+    String getBreed();
 
-    String getProcess();
+    String getAge();
 
-    String getVarietal();
+    String getDescription();
 
-    String getScore();
+    String getImage();
 
-    String getUnits();
-
-    String getNotes();
-
-    String getAbout();
-
-    String getHeroImage();
 }

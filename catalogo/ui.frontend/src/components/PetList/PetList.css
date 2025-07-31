@@ -1,17 +1,17 @@
 /* Estilo do container principal */
-.coffee-list-root {
+.pet-list-root {
   margin: 0 auto;
   padding: 20px;
 }
 
 /* Container do AEM e Grid */
-.coffee-list-root .container.responsivegrid,
-.coffee-list-root .cmp-container {
+.pet-list-root .container.responsivegrid,
+.pet-list-root .cmp-container {
   width: 100% !important;
 }
 
 /* Grid principal que contém os cards */
-.coffee-list-root .aem-Grid {
+.pet-list-root .aem-Grid {
   display: flex !important;
   flex-wrap: wrap !important;
   gap: 50px !important;
@@ -19,7 +19,7 @@
 }
 
 /* Colunas do grid que contêm os cards */
-.coffee-list-root .aem-GridColumn.aem-GridColumn--default--12 {
+.pet-list-root .aem-GridColumn.aem-GridColumn--default--12 {
   width: auto !important;
   float: none !important;
   flex: 1 !important;
@@ -28,18 +28,18 @@
 }
 
 /* Ajustes nos containers internos */
-.coffee-list-root .aem-GridColumn > div {
+.pet-list-root .aem-GridColumn > div {
   margin: 0 !important;
   padding: 0px 20px !important;
 }
 
 /* Remover espaços vazios */
-.coffee-list-root .aem-GridColumn > div:empty {
+.pet-list-root .aem-GridColumn > div:empty {
   display: none !important;
 }
 
 /* Garantir que o card ocupe todo o espaço disponível */
-.coffee-list-root .coffee-card {
+.pet-list-root .pet-card {
   height: 100%;
   margin: 0 !important;
 }

@@ -1,4 +1,3 @@
-// src/components/CoffeeList/CoffeeList.js
 import React from "react";
 import {
   MapTo,
@@ -14,12 +13,12 @@ const EditConfig = {
 };
 
 const PetList = (props) => (
-  <div className="coffee-list-root">
+  <div className="pet-list-root">
     <AllowedComponentsContainer {...props} />
   </div>
 );
 
-export default MapTo("catalogo/components/petlist")(
+export default MapTo('catalogo/components/petlist')(
   withComponentMappingContext(PetList),
   EditConfig
 );

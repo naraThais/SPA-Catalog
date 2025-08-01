@@ -22,17 +22,16 @@ const Header = () => {
         <Link to="/content/catalogo/us/en/home.html?wcmmode=disabled">
           <strong>PetCare</strong>
         </Link>
-
-        <button
-          className="menu-toggle"
-          onClick={() => setMenuAberto(!menuAberto)}
-          aria-label="Abrir menu"
-        >
-          ☰
-        </button>
       </div>
 
-      {/* Navegação principal */}
+      <button
+        className="menu-toggle"
+        onClick={() => setMenuAberto(!menuAberto)}
+        aria-label="Abrir menu"
+      >
+        ☰
+      </button>
+
       <ul className={`primary-nav ${menuAberto ? "open" : ""}`}>
         {menu.map(({ label, path }) => (
           <li key={path}>

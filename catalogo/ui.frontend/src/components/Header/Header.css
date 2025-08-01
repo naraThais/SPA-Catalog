@@ -20,8 +20,9 @@
   z-index: 1000;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Knewave&display=swap");
 .brand a {
-  font-family: "Playfair Display", serif;
+font-family: "Knewave", system-ui;
   font-size: 1.8rem;
   color: var(--gatinho-creme);
   text-decoration: none;
@@ -29,15 +30,20 @@
   letter-spacing: 1px;
 }
 
-.pet {
+/* Botão de menu (☰) */
+.menu-toggle {
   display: none;
   font-size: 2rem;
   background: none;
   border: none;
   color: var(--gatinho-creme);
   cursor: pointer;
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
 }
 
+/* Navegação principal (desktop) */
 .primary-nav {
   display: flex;
   list-style: none;
@@ -60,8 +66,9 @@
   border-bottom: 2px solid var(--gatinho-pessego);
 }
 
+/* Responsivo para mobile */
 @media (max-width: 768px) {
-  .pet {
+  .menu-toggle {
     display: block;
   }
 
@@ -90,8 +97,8 @@
 
   .primary-nav a:hover,
   .primary-nav a.active {
-    color: var(--gatinho-pessego);
-    border-bottom: 2px solid var(--gatinho-pessego);
+    color: #ecc85c !important;
+    border-bottom: 2px solid #ecc85c;
   }
 }
 

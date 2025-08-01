@@ -13,7 +13,7 @@ const EditConfig = {
 };
 
 const PetList = (props) => (
-  <div className="pet-list-root">
+  <div className="pet-card-container">
     <AllowedComponentsContainer {...props} />
   </div>
 );

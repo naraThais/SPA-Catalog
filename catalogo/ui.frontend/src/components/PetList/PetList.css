@@ -1,51 +1,48 @@
-/* Estilo do container principal */
-.pet-list-root {
-  margin: 0 auto;
-  padding: 20px;
+/* Container que armazena os cards */
+.pet-card-container {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
+    padding: 24px 40px !important;
+    justify-items: center !important;
+    justify-content: center !important;
 }
 
-/* Container do AEM e Grid */
-.pet-list-root .container.responsivegrid,
-.pet-list-root .cmp-container {
-  width: 100% !important;
+.pet-card-container .aem-Grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 24px !important;
+    padding: 24px 40px !important;
+    justify-items: center !important;
+    justify-content: center !important;
 }
 
-/* Grid principal que contém os cards */
-.pet-list-root .aem-Grid {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 50px !important;
-  justify-content: center !important;
+/*
+ * Esta regra é a mais importante. Ela anula a largura padrão do AEM (100%)
+ * para que os cards possam se alinhar em colunas.
+ */
+.pet-card-container .aem-GridColumn.aem-GridColumn--default--12 {
+    width: auto !important;
+    float: none !important;
+    flex: 1 !important; /* Ajuda a garantir que o item se adapte ao grid */
+    max-width: 300px !important; /* Limita a largura máxima de cada card */
+    margin: 0 !important;
 }
 
-/* Colunas do grid que contêm os cards */
-.pet-list-root .aem-GridColumn.aem-GridColumn--default--12 {
-  width: auto !important;
-  float: none !important;
-  flex: 1 !important;
-  max-width: 300px !important;
-  margin: 0 !important;
+
+.pet-card-container > .aem-GridColumn--default--12 {
+    width: auto !important;
+    max-width: none !important;
 }
 
-/* Ajustes nos containers internos */
-.pet-list-root .aem-GridColumn > div {
-  margin: 0 !important;
-  padding: 0px 20px !important;
+@media (max-width: 960px) {
+    .pet-card-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
 }
 
-/* Remover espaços vazios */
-.pet-list-root .aem-GridColumn > div:empty {
-  display: none !important;
-}
-
-/* Garantir que o card ocupe todo o espaço disponível */
-.pet-list-root .pet-card {
-  height: 100%;
-  margin: 0 !important;
-}
-
-.cmp-title{
-    padding-left: 10%;
-    padding-top: 50px;
-
+@media (max-width: 640px) {
+    .pet-card-container {
+        grid-template-columns: 1fr !important;
+    }
 }

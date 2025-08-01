@@ -15,22 +15,27 @@ const PetCard = (props) => {
   return (
     <article className="pet-card">
       {image ? (
-        <img className="pet-card__image" src={image} alt={`Foto de ${name}`} />
+        <img
+          className="pet-card__image"
+          src={image}
+          alt={`Foto de ${name}`}
+        />
       ) : (
-        <p style={{ color: "red", textAlign: "center" }}>
+        <p className="pet-card__no-image">
           Nenhuma imagem encontrada para este pet
         </p>
       )}
 
       <div className="pet-card__content">
-        <h2 className="pet-card__name">{name}</h2>
-        <div className="pet-card__details">
-          <dl>
-            <dt>Raça</dt><dd>{bread}</dd>
-            <dt>Idade</dt><dd>{age}</dd>
-            <dt>Descrição</dt><dd>{description}</dd>
-          </dl>
-        </div>
+        <h2 className="pet-card__name">{name || "Nome não disponível"}</h2>
+        <dl className="pet-card__details">
+          <dt>Raça</dt>
+          <dd>{bread}</dd>
+          <dt>Idade</dt>
+          <dd>{age}</dd>
+          <dt>Descrição</dt>
+          <dd>{description}</dd>
+        </dl>
       </div>
 
       <button className="pet-card__button" onClick={goToDetails}>

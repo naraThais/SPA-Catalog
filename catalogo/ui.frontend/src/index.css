@@ -6,10 +6,10 @@
   box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 body {
-font-family: Georgia, 'Times New Roman', Times, serif;
-  background-color: #779ea9; 
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
 }
 
@@ -20,30 +20,6 @@ h1, h2, h3, h4, h5 {
 }
 
 
-.pet-list-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  padding: 24px;
-  justify-content: center;
-}
-
-.pet-list-grid > * {
-  flex: 1 1 calc(33.333% - 32px);
-  max-width: 350px;
-}
 
 
-@media (max-width: 960px) {
-  .pet-list-grid > * {
-    flex: 1 1 calc(50% - 32px);
-  }
-}
-
-
-@media (max-width: 640px) {
-  .pet-list-grid > * {
-    flex: 1 1 100%;
-  }
-}
 

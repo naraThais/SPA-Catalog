@@ -17,7 +17,9 @@ const PetCard = (props) => {
       {image ? (
         <img className="pet-card__image" src={image} alt={`Foto de ${name}`} />
       ) : (
-        <p style={{ color: "red", textAlign: "center" }}>⚠ Nenhuma imagem encontrada para este pet</p>
+        <p style={{ color: "red", textAlign: "center" }}>
+          Nenhuma imagem encontrada para este pet
+        </p>
       )}
 
       <div className="pet-card__content">

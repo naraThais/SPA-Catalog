@@ -17,6 +17,7 @@ const Hero = ({ title, subtitle, fileReference }) => {
   );
 };
 
+
 const EditConfig = {
   emptyLabel: 'Hero',
   isEmpty: function(props) {

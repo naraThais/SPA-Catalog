@@ -4,14 +4,17 @@ import { MapTo } from "@adobe/aem-react-editable-components";
 import "./Header.css";
 
 const menu = [
-  { label: "Início", path: "/content/catalogo/us/en/home.html?wcmmode=disabled" },
+  {
+    label: "Início",
+    path: "/content/catalogo/us/en/home.html?wcmmode=disabled",
+  },
   { label: "Pets", path: "/content/catalogo/us/en/pets.html" },
   { label: "Sobre", path: "/content/catalogo/us/en/about.html" },
 ];
 
 const Header = () => {
   const [menuAberto, setMenuAberto] = useState(false);
-  const { pathname } = useLocation(); 
+  const { pathname } = useLocation();
 
   return (
     <header className="site-header">
@@ -21,7 +24,7 @@ const Header = () => {
         </Link>
 
         <button
-          className="pet"
+          className="menu-toggle"
           onClick={() => setMenuAberto(!menuAberto)}
           aria-label="Abrir menu"
         >
